@@ -1,2 +1,4 @@
 # ProjetoIntegradorJP
-Projeto Integrador do curso Jovem Programador Senac
+Projeto Integrador:
+## Objetivo
+<ol>Integrar todas as unidades curriculares</ol>
