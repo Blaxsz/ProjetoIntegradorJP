@@ -1,5 +1,4 @@
 # ProjetoIntegradorJP
-Projeto Integrador:
 ## Objetivo
 <ol>Integrar todas as unidades curriculares</ol>
 <ol>UC01: Elaborar projetos de aplicações para web</ol>
