@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça a sua solicitação</title>
+</head>
+<body>
+    <form method="post" action="/criarsolicitacao">
+    <p><label for="solicitacao">Faça a sua solicitação:</label></p>
+
+    <select name="solicitacao" id="solicitacao">
+      <option value="sala">Reserva de sala</option>
+      <option value="material">Pedido de materiais</option>
+      <option value="manutencao">Manutenção de equipamentos ou computadores</option>
+    </select>
+
+    <p><textarea name="comentarios">Fale sobre o seu pedido.</textarea></p>
+    <p><button type="submit">Enviar</button></p>
+</form>
+</body>
+</html>
