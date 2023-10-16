@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faça a sua solicitação</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class="topo">
     <div class="logo">
-      <img src="logo-senac-cnc-color-100.png">
+      <img src="images/logo-senac-cnc-color-100.png">
     </div>
   </div>
   <div class="body">
@@ -18,14 +18,16 @@
     <form method="post" action="/criarsolicitacao">
     <p><label for="solicitacao">Faça a sua solicitação:</label></p>
 
-    <select name="solicitacao" id="solicitacao">
+    <select class="form-select" name="solicitacao" id="solicitacao">
       <option value="sala">Reserva de sala</option>
       <option value="material">Pedido de materiais</option>
       <option value="manutencao">Manutenção de equipamentos ou computadores</option>
     </select>
 
-    <p><textarea name="comentarios">Fale sobre o seu pedido.</textarea></p>
-    <p><button type="submit">Enviar</button></p>
+    <div class="form-control">
+      <textarea class="form-control" placeholder="Digite aqui detalhes da sua solicitação" id="detalhes-da-solicitacao" rows="10"></textarea>
+    </div>
+    <button type="button" class="btn btn-primary" type="submit">Enviar</button>
   </div>
   </div>
 </form>
