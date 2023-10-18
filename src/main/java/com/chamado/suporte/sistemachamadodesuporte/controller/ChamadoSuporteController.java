@@ -1,4 +1,4 @@
-package com.chamado.suporte.controller;
+package com.chamado.suporte.sistemachamadodesuporte.controller;
 
 import java.util.*;
 
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.chamado.suporte.model.ChamadoSuporte;
-import com.chamado.suporte.repository.ChamadoSuporteRepository;
+import com.chamado.suporte.sistemachamadodesuporte.model.ChamadoSuporte;
+import com.chamado.suporte.sistemachamadodesuporte.repository.ChamadoSuporteRepository;
 
 @Controller
 public class ChamadoSuporteController {
@@ -21,7 +21,7 @@ public class ChamadoSuporteController {
         return "cadastro";
     }
 
-    @PostMapping
+    @PostMapping("/salvarCadastro")
     public String salvarCadastro(ChamadoSuporte chamadosuporte) {
         repository.save(chamadosuporte);
         return "redirect:/login";
@@ -50,6 +50,4 @@ public class ChamadoSuporteController {
         }
         return "redirect:/login";
     }
-
-    @GetMapping
 }

@@ -1,4 +1,4 @@
-package com.chamado.suporte.model;
+package com.chamado.suporte.sistemachamadodesuporte.model;
 
 import java.io.Serializable;
 
@@ -10,8 +10,7 @@ import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-public class ChamadoSuporte implements Serializable {
+public class ChamadoSuporte {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
