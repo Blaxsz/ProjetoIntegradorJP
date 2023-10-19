@@ -27,9 +27,19 @@ public class ChamadoSuporteController {
         return "redirect:/login";
     }
 
+    @GetMapping("/direcionarlogin")
+    public String direcionarlogin() {
+        return "index";
+    }
+
     @GetMapping("/login")
     public String loginSuporte() {
         return "index";
+    }
+
+    @GetMapping("direcionarcadastro")
+    public String direcionarcadastro() {
+        return "cadastro";
     }
 
     @GetMapping("/solicitacao")
@@ -60,4 +70,5 @@ public class ChamadoSuporteController {
         }
         return "redirect:/login";
     }
+
 }
