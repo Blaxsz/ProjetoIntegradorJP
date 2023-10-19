@@ -34,7 +34,17 @@ public class ChamadoSuporteController {
 
     @GetMapping("/solicitacao")
     public String solicitacaoSuporte() {
+        return "acessosolicitacao";
+    }
+
+    @GetMapping("/criarsolicitacao")
+    public String criarSolicitacao() {
         return "criacaosolicitacao";
+    }
+
+    @GetMapping("respostasolicitacao")
+    public String respostasolicitacao() {
+        return "respostasolicitacao";
     }
 
     @PostMapping("/validacaologin")
