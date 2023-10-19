@@ -49,5 +49,4 @@ public class Solicitacao extends ChamadoSuporte {
     public void setDetalhesDaSolicitacao(String detalhesDaSolicitacao) {
         this.detalhesDaSolicitacao = detalhesDaSolicitacao;
     }
-
 }
