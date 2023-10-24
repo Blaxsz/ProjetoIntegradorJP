@@ -5,9 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.view.RedirectView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import com.chamado.suporte.sistemachamadodesuporte.model.ChamadoSuporte;
 import com.chamado.suporte.sistemachamadodesuporte.model.Solicitacao;
@@ -40,11 +40,6 @@ public class ChamadoSuporteController {
         return "index";
     }
 
-    @GetMapping("direcionarcadastro")
-    public String direcionarcadastro() {
-        return "cadastro";
-    }
-
     @GetMapping("/solicitacao")
     public String solicitacaoSuporte() {
         return "versolicitacoes";
@@ -68,17 +63,19 @@ public class ChamadoSuporteController {
 
     }
 
+    @GetMapping("/versolicitacoes")
+    public String verSolicitacoes() {
+        return "versolicitacoes";
+        // basicamente cópia da página solicitacoes.html sem botão excluir
+    }
+
     @GetMapping("/respostasolicitacao")
     public String respostasolicitacao() {
         return "solicitacoes";
     }
 
     @PostMapping("/validacaologin")
-    public ModelAndView validacaologin(@RequestParam("conta") String conta) {
-        if ("admin".equals(conta)) {
-            return new ModelAndView(new RedirectView("/respostasolicitacao"));
-        } else {
-            return new ModelAndView(new RedirectView("/solicitacao"));
-        }
+    public String validacaoLogin() {
+        return "redirect:/solicitacao";
     }
 }
