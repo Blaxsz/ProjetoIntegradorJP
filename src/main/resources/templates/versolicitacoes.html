@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crie ou Veja suas Solicitações</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="topo">
+      <div class="logo">
+        <img class="logosenac" src="images/logo-senac-cnc-color-100.png" />
+      </div>
+      <div class="links">
+        <ul class="lista">
+          <li><a href="#">O Senac</a></li>
+          <li><a href="#">Unidades</a></li>
+          <li><a href="#">Gratuidades</a></li>
+          <li><a href="#">Educação a Distancia</a></li>
+          <li><a href="#">Transparência e Prestação de Contas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="barracima"></div>
+    <div class="bodysolicitacao">
+      <div method="get" action="/criarsolicitacao">
+        <h2 class="h2solicitacao">Você deseja criar uma solicitação?</h2>
+        <button type="submit" class="botaosolicitacao">Crie aqui!</button>
+      </div>
+      <div method="get" action="/solicitacao">
+        <h2 class="h2solicitacao">Deseja ver uma solicitação existente?</h2>
+        <button type="submit" class="botaosolicitacao">Clique aqui!</button>
+      </div>
+      <div method="get" action="/respostasolicitacao">
+        <h2 class="h2solicitacao">Gerenciar solicitações</h2>
+        <button type="submit" class="botaosolicitacao">Clique aqui!</button>
+      </div>
+    </div>
+    <div class="barrabaixo"></div>
+    <div class="rodape">
+      <img src="images/logosenac.png" alt="" class="logorodape" />
+      <p class="direitos">© Todos os direitos reservados - 2023</p>
+    </div>
+  </body>
+</html>
