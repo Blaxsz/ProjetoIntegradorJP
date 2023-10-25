@@ -1,13 +1,16 @@
 package com.chamado.suporte.sistemachamadodesuporte.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.chamado.suporte.sistemachamadodesuporte.model.ChamadoSuporte;
 import com.chamado.suporte.sistemachamadodesuporte.model.Solicitacao;
@@ -40,6 +43,11 @@ public class ChamadoSuporteController {
         return "index";
     }
 
+    @GetMapping("direcionarcadastro")
+    public String direcionarcadastro() {
+        return "cadastro";
+    }
+
     @GetMapping("/solicitacao")
     public String solicitacaoSuporte() {
         return "versolicitacoes";
@@ -63,19 +71,38 @@ public class ChamadoSuporteController {
 
     }
 
-    @GetMapping("/versolicitacoes")
-    public String verSolicitacoes() {
-        return "versolicitacoes";
-        // basicamente cópia da página solicitacoes.html sem botão excluir
-    }
-
     @GetMapping("/respostasolicitacao")
     public String respostasolicitacao() {
         return "solicitacoes";
     }
 
-    @PostMapping("/validacaologin")
-    public String validacaoLogin() {
-        return "redirect:/solicitacao";
+    @GetMapping("/gersolicitacao")
+    public String gersolicitacao() {
+        return "gersolicitacao";
+    }
+
+    @PostMapping("/validacaoLogin")
+    public String validacaologin(ChamadoSuporte chamadoSuporte) {
+        List<ChamadoSuporte> chamados = new ArrayList();
+        String conta = "";
+        int validaUsuario = 0;
+        chamados = repository.findAll();
+        for (ChamadoSuporte chamadoSuporte2 : chamados) {
+            if (chamadoSuporte.getEmail().equals(chamadoSuporte2.getEmail())
+                    && chamadoSuporte.getSenha().equals(chamadoSuporte2.getSenha())) {
+                conta = chamadoSuporte2.getConta();
+                validaUsuario = 1;
+            }
+        }
+        if (validaUsuario == 0) {
+            return "index";
+        }
+
+        if (conta.equals("admin")) {
+            return "gersolicitacao";
+        } else {
+            return "versolicitacoes";
+        }
+
     }
 }
